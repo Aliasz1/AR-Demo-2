@@ -34,7 +34,6 @@ AFRAME.registerComponent('model-viewer', {
   
       this.initCameraRig();
       this.initEntities();
-      this.initBackground();
   
       if (this.data.uploadUIEnabled) { this.initUploadInput(); }
   
@@ -99,18 +98,6 @@ AFRAME.registerComponent('model-viewer', {
       cameraRigEl.appendChild(leftHandEl);
   
       this.el.appendChild(cameraRigEl);
-    },
-  
-    initBackground: function () {
-      var backgroundEl = this.backgroundEl = document.querySelector('a-entity');
-      backgroundEl.setAttribute('geometry', {primitive: 'sphere', radius: 65});
-      backgroundEl.setAttribute('material', {
-        shader: 'background-gradient',
-        colorTop: '#37383c',
-        colorBottom: '#757575',
-        side: 'back'
-      });
-      backgroundEl.setAttribute('hide-on-enter-ar', '');
     },
   
     initEntities: function () {
